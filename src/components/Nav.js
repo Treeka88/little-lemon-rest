@@ -1,14 +1,19 @@
+import mainLogo from "../assets/images/Logo.png"
+import { Link }    from 'react-router-dom'
 function Nav(){
     return(
-    <>
-    <ul>
-        <li><a href="Home">Home</a></li>
-        <li><a href="About">About</a></li>
-        <li><a href="Menu">Menu</a></li>
-        <li><a href="Reservation">Reservation</a></li>
-        <li><a href="Log in">Log in</a></li>
-    </ul>
-        </>
+        <nav className="navBar">
+            <img src={mainLogo} alt=""/>
+            <div className="nav-container">
+               <ul className="nav-list">
+                    <li><Link to='/'>Home</Link></li>
+                    <li><Link to='/Specials'>Specials</Link></li>
+                    <li><Link to='/Reservation'>Reservation</Link></li>
+                    <li><Link to='/Footer'>About</Link></li>
+                    <li><Link to='/LogIn'>Log In</Link></li>
+                </ul>
+            </div>
+        </nav>
     )
 }
 export default Nav

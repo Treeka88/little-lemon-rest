@@ -1,38 +1,51 @@
-.App {
-  text-align: center;
+.App{
+    text-align: center;
+    font-family: 'Markazi text', serif;
+    background-color: greenyellow;
+}
+.entrance{
+    display: block;
+    width: 100vw;
+    height: auto;
+    max-width: 100%;
+}
+.navBar{
+    display: flex;
+    justify-content: space-between;
+}
+.nav-list{
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    padding: 30px;
+    margin: 0;
+}
+.navBar img{
+    height: 80px;
+    width: 180px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header h1{
+    color: greenyellow;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.info{
+    color: black
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.contact-list{
+    list-style: none;
+    padding: 0;
 }
-
-.App-link {
-  color: #61dafb;
+.lemon_dessert{
+    height: 200px;
+    width: 200px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.greek {
+    height: 200px;
+    width: 200px;
+}
+.specials_container{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
 }

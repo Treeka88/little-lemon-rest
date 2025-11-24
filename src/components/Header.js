@@ -1,10 +1,12 @@
 import React from "react"
-import mainLogo from "../assets/images/Logo.png"
-function Header(){
+import rest from '../assets/images/restaurant.jpg'
+function Header(props){
     return(
-    <>
-    <img src={mainLogo} alt="" height={80} width={200} />
-    </>
-        )
+        <header>
+            <h1>{props.name}</h1>
+            <h2>{props.state}</h2>
+            <img className="entrance" src={rest} alt="restaurant entrance"/>
+        </header>
+    )
 }
 export default Header
