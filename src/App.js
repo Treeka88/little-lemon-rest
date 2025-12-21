@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Specials from './components/Specials';
 import Nav from './components/Nav';
 import LogIn from './components/LogIn';
+import Reservation from './components/Reservation';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 
@@ -16,6 +17,7 @@ function App() {
         <Routes className=''>
           <Route path='/' element={<Header name='Little Lemon' state='Chicago'/>}></Route>
           <Route path='/Specials' element={<Specials/>}></Route>
+          <Route path='/Reservation' element={<Reservation/>}></Route>
           <Route path='/Footer' element={<Footer/>}></Route>
           <Route path='/LogIn' element={<LogIn/>}></Route>
         </Routes>
