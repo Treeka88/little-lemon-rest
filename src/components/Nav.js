@@ -8,7 +8,7 @@ function Nav(){
                <ul className="nav-list">
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/Specials'>Specials</Link></li>
-                    <li><Link to='/Reservation'>Reservation</Link></li>
+                    <li><Link to='/BookingForm'>Book a table</Link></li>
                     <li><Link to='/Footer'>About</Link></li>
                     <li><Link to='/LogIn'>Log In</Link></li>
                 </ul>
