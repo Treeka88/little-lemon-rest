@@ -1,11 +1,18 @@
-function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion, setOccasion, availableTimes, dispatch }){
+function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion, setOccasion, availableTimes, dispatch, submitForm }) {
           const today = new Date().toISOString().split("T")[0];
+
+            const handleSubmit = (e) => {
+            e.preventDefault();
+            submitForm({ date, time, guests, occasion });
+          }
+          
     return(
         <div>
             <h1 id="booking-form-title">Book your table</h1>
             <form 
                 style={{display: 'grid', gap: '20px', maxWidth: 200, margin: 'auto'}}
                 aria-labelledby="booking-form-title"
+                onSubmit={handleSubmit}
             >
                    <label htmlFor="res-date">Choose date</label>
                     <input 
