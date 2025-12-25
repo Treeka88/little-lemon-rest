@@ -7,19 +7,31 @@ import Nav from './components/Nav';
 import LogIn from './components/LogIn';
 import BookingForm from './components/BookingForm';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { fetchData } from './Api.js';
 
+// const initializeTimes = () => ['17:00', '18:00', '19:00', '20:00', '21:00'];
 
-const initializeTimes = () => ['17:00', '18:00', '19:00', '20:00', '21:00'];
+// const updateTimes = (state, action) => {
+//   switch (action.type) {
+//     case 'UPDATE_TIMES':
+//       return initializeTimes(); // For now, return the same available times regardless of date
+//     default:
+//       return state;
+//   }
+// };
 
+const initializeTimes = () => {
+  const today = new Date()
+  return fetchData(today);
+}
 const updateTimes = (state, action) => {
   switch (action.type) {
     case 'UPDATE_TIMES':
-      return initializeTimes(); // For now, return the same available times regardless of date
+      return fetchData(new Date(action.date));
     default:
       return state;
   }
-};
-
+}
 
 function App() {
   const [date, setDate] = useState('');

@@ -1,5 +1,5 @@
 function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion, setOccasion, availableTimes, dispatch }){
-
+          const today = new Date().toISOString().split("T")[0];
     return(
         <div>
             <h1 id="booking-form-title">Book your table</h1>
@@ -12,12 +12,19 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
                         type="date" 
                         id="res-date" 
                         value={date} 
-                        onChange={(e) => { setDate(e.target.value); dispatch({ type: 'UPDATE_TIMES' }); }}
+                        min={today}
+                       onChange={(e) => {
+                                const selectedDate = e.target.value;
+                                setDate(selectedDate);
+                                dispatch({
+                                type: 'UPDATE_TIMES',
+                                date: selectedDate,
+                                 });
+                                }}
                         required
                         aria-describedby="date-help"
                     />
                     <div id="date-help" className="sr-only">Select your preferred reservation date</div>
-                    
                     <label htmlFor="res-time">Choose time</label>
                     <select 
                         id="res-time" 
@@ -26,10 +33,9 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
                         required
                         aria-describedby="time-help"
                     >
-                        {availableTimes?.map((t) => <option key={t}>{t}</option>) || []}
+                        {availableTimes?.map((t) => <option key={t} value={t}>{t}</option>) || []}
                     </select>
                     <div id="time-help" className="sr-only">Available reservation times update based on selected date</div>
-                    
                     <label htmlFor="guests">Number of guests</label>
                     <input 
                         type="number" 
@@ -43,7 +49,6 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
                         aria-describedby="guests-help"
                     />
                     <div id="guests-help" className="sr-only">Enter number of guests (1-10)</div>
-                    
                     <label htmlFor="occasion">Occasion</label>
                     <select 
                         id="occasion" 
@@ -57,7 +62,6 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
                         <option>Other</option>
                     </select>
                     <div id="occasion-help" className="sr-only">Optional: Select the occasion for your reservation</div>
-                    
                     <input 
                         type="submit" 
                         value="Make Your reservation"
