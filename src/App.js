@@ -20,11 +20,11 @@ import { fetchData, submitAPI } from './Api.js';
 //   }
 // };
 
-const initializeTimes = () => {
+export const initializeTimes = () => {
   const today = new Date()
   return fetchData(today);
 }
-const updateTimes = (state, action) => {
+export const updateTimes = (state, action) => {
   switch (action.type) {
     case 'UPDATE_TIMES':
       return fetchData(new Date(action.date));
