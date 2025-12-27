@@ -5,7 +5,7 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
             e.preventDefault();
             submitForm({ date, time, guests, occasion });
           }
-          
+          const isFormValid = date && time && guests > 0 && occasion;
     return(
         <div>
             <h1 id="booking-form-title">Book your table</h1>
@@ -14,7 +14,7 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
                 aria-labelledby="booking-form-title"
                 onSubmit={handleSubmit}
             >
-                   <label htmlFor="res-date">Choose date</label>
+                   <label htmlFor="res-date">Choose date  <span style={{color: 'red'}}>*</span></label>
                     <input 
                         type="date" 
                         id="res-date" 
@@ -32,7 +32,7 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
                         aria-describedby="date-help"
                     />
                     <div id="date-help" className="sr-only">Select your preferred reservation date</div>
-                    <label htmlFor="res-time">Choose time</label>
+                    <label htmlFor="res-time">Choose time  <span style={{color: 'red'}}>*</span></label>
                     <select 
                         id="res-time" 
                         value={time} 
@@ -56,13 +56,15 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
                         aria-describedby="guests-help"
                     />
                     <div id="guests-help" className="sr-only">Enter number of guests (1-10)</div>
-                    <label htmlFor="occasion">Occasion</label>
+                    <label htmlFor="occasion">Occasion <span style={{color: 'red'}}>*</span></label>
                     <select 
                         id="occasion" 
                         value={occasion} 
                         onChange={(e) => setOccasion(e.target.value)}
                         aria-describedby="occasion-help"
+                        required
                     >
+                        <option value="">Select an occasion</option>
                         <option>Birthday</option>
                         <option>Anniversary</option>
                         <option>casual meeting</option>
@@ -72,6 +74,7 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
                     <input 
                         type="submit" 
                         value="Make Your reservation"
+                        disabled={!isFormValid}
                         aria-describedby="submit-help"
                     />
                     <div id="submit-help" className="sr-only">Submit your reservation request</div>

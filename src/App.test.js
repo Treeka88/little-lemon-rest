@@ -18,12 +18,13 @@ test('initializeTimes calls fetchData with today\'s date', () => {
   expect(times).toBe(mockTimes);
 }
 );
+
 test('updateTimes calls fetchData with the correct date', () => {
   const mockTimes = ['17:00', '18:00', '19:00'];
   fetchData.mockReturnValue(mockTimes);
 
-  const action = { type: 'UPDATE_TIMES', date: '2024-07-01' };
-  const expectedDate = new Date('2024-07-01');
+  const action = { type: 'UPDATE_TIMES', date: '2024-12-30' };
+  const expectedDate = new Date('2024-12-30');
 
   const times = updateTimes([], action);
 
