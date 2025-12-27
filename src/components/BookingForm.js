@@ -40,13 +40,14 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
                         required
                         aria-describedby="time-help"
                     >
+                        <option value="">Select a time</option>
                         {availableTimes?.map((t) => <option key={t} value={t}>{t}</option>) || []}
                     </select>
                     <div id="time-help" className="sr-only">Available reservation times update based on selected date</div>
                     <label htmlFor="guests">Number of guests</label>
                     <input 
                         type="number" 
-                        placeholder="1" 
+                        placeholder="How many guests?" 
                         min="1" 
                         max="10" 
                         id="guests" 

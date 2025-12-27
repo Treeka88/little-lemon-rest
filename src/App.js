@@ -36,7 +36,7 @@ export const updateTimes = (state, action) => {
 function App() {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
-  const [guests, setGuests] = useState(1);
+  const [guests, setGuests] = useState('');
   const [occasion, setOccasion] = useState('');
   const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
 
