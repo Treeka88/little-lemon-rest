@@ -38,35 +38,19 @@ import BookingForm from './components/BookingForm';
 
 
 // testing the BookingForm component
-// const mockProps = {
-//   date: '1-12-2025',
-//   setDate: jest.fn(),
-//   time: '10:00',
-//   setTime: jest.fn(),
-//   guests: '3',
-//   setGuests: jest.fn(),
-//   occasion: 'casual meeting',
-//   setOccasion: jest.fn(),
-//   availableTimes: ['17:00', '18:00', '19:00'],
-//   dispatch: jest.fn(),
-//   submitForm: jest.fn(),
-// };
-
-// test('testing the booking form with invalid number of guests', () => {
-//    render(<BookingForm{...mockProps}/>)
-//    const guestInput = screen.getByLabelText(/number of guests/i);
-//    fireEvent.change(guestInput, { target: {value: 'How many guests?'}})
-//    expect(
-//     screen.getByText(/number of guests must be between 1 and 10/i)).toBeInTheDocument();
-//    })
-
-  //  test('testing the booking form with valid number of guests', () => {
-  //   render(<BookingForm{...mockProps}/>)
-  //   const guestInput = screen.getByLabelText(/number of guests/i);
-  //   fireEvent.change(guestInput, { target: {value: '5'}})
-  //   expect(
-  //    screen.queryByText(/number of guests must be between 1 and 10/i)).not.toBeInTheDocument();
-  //   })
+const mockProps = {
+  date: '1-12-2025',
+  setDate: jest.fn(),
+  time: '10:00',
+  setTime: jest.fn(),
+  guests: '3',
+  setGuests: jest.fn(),
+  occasion: 'casual meeting',
+  setOccasion: jest.fn(),
+  availableTimes: ['17:00', '18:00', '19:00'],
+  dispatch: jest.fn(),
+  submitForm: jest.fn(),
+};
 
    // testing the button is disabled when required fields are empty
     // test('submit button is disabled when required fields are empty', () => {

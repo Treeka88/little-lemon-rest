@@ -14,10 +14,10 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
                 aria-labelledby="booking-form-title"
                 onSubmit={handleSubmit}
             >
-                   <label htmlFor="res-date">Choose date  <span style={{color: 'red'}}>*</span></label>
+                   <label htmlFor="reservation-date">Choose date  <span style={{color: 'red'}}>*</span></label>
                     <input 
                         type="date" 
-                        id="res-date" 
+                        id="reservation-date" 
                         value={date} 
                         min={today}
                        onChange={(e) => {
@@ -32,9 +32,9 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
                         aria-describedby="date-help"
                     />
                     <div id="date-help" className="sr-only">Select your preferred reservation date</div>
-                    <label htmlFor="res-time">Choose time  <span style={{color: 'red'}}>*</span></label>
+                    <label htmlFor="reservation-time">Choose time  <span style={{color: 'red'}}>*</span></label>
                     <select 
-                        id="res-time" 
+                        id="reservation-time" 
                         value={time} 
                         onChange={(e) => setTime(e.target.value)}
                         required
@@ -76,6 +76,7 @@ function BookingForm({ date, setDate, time, setTime, guests, setGuests, occasion
                         type="submit" 
                         value="Make Your reservation"
                         disabled={!isFormValid}
+                        aria-label="On Click"
                         aria-describedby="submit-help"
                     />
                     <div id="submit-help" className="sr-only">Submit your reservation request</div>
