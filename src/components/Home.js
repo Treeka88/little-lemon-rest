@@ -10,7 +10,6 @@ import { Link } from "react-router-dom"
 function Home(props){
     return(
         <>
-        
            <div className='header'>
                 <div className="header-info">
                     <Header name='Little Lemon' state='Chicago'/>
@@ -18,33 +17,51 @@ function Home(props){
                     <button className="main_reserve" ><Link to="/BookingForm" style={{color: 'black', textDecoration: 'none'}}>Reserve a Table</Link></button>
                 </div>
                 <div className="header-image">
-                    <img src={main_image} alt="Main"/>
+                    <img className="hdr-img" src={main_image} alt="Main"/>
                 </div>
            </div>
            <Specials/>
+           <div className="thoughts">
             <h2>What our customers are saying</h2>
             <div className="your_thoughts">
                 <div>
                     <img className="customer1" src={customer1} alt="Customer 1"/>
                     <h1>Customer 1</h1>
                     <p>Customer 1's review</p>
+                    <div aria-label="Rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                    <p>We had a great experience</p>
                 </div>
-                                <div>
+                <div>
                     <img className="customer2" src={customer2} alt="Customer 2"/>
                     <h1>Customer 2</h1>
                     <p>Customer 2's review</p>
+                        <div aria-label="Rating">
+                        ⭐⭐⭐⭐⭐
+                        </div>
+                        <p>Food was delicious</p>
                 </div>
-                                <div>
+                <div>
                     <img className="customer3" src={customer3} alt="Customer 3"/>
                     <h1>Customer 3</h1>
                     <p>Customer 3's review</p>
+                        <div aria-label="Rating">
+                        ⭐⭐⭐⭐⭐
+                        </div>
+                        <p>I'd recommend this place to anyone</p>
                 </div>
-                                <div>
+                <div>
                     <img className="customer1" src={customer4} alt="Customer 4"/>
                     <h1>Customer 4</h1>
                     <p>Customer 4's review</p>
+                        <div aria-label="Rating">
+                        ⭐⭐⭐⭐
+                        </div>
+                        <p>Food was delicious, but the wine selection was limited</p>
                 </div>
             </div>
+           </div>
         </>
     )
 }

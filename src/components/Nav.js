@@ -3,7 +3,7 @@ import { Link }    from 'react-router-dom'
 function Nav(){
     return(
         <nav className="navBar">
-            <img src={mainLogo} alt=""/>
+            <img src={mainLogo} alt="main logo"/>
             <div className="nav-container">
                <ul className="nav-list">
                     <li><Link to='/'>Home</Link></li>

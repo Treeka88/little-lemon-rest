@@ -4,7 +4,7 @@ function Footer(){
         <div className="info">
             <p>we are a family based restaurant, we believe that we can provide you a new experience</p>
             <p>try our home made mediterranean meals</p>
-            <p>all rights Reserved © 2025</p>
+            <p>all rights Reserved © 2026</p>
             <p>done by Treeka</p>
         </div>
         <div className="contact-us">
